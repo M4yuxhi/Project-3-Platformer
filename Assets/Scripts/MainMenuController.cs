@@ -10,44 +10,30 @@ public class MainMenuController : ButtonsMenu
     [SerializeField] private TMP_Text maxGoldCoinsTMP;
 
 
-    void Start()
+    protected override void Start()
     {
-        Globals.LoadData();
+        base.Start();
+        Globals.LoadData(Globals.SelectedSavesSlot);
         maxGoldCoinsTMP.text = Globals.MaxGoldCoinCount.ToString();
-
-        SuperStart();
     }
 
-    void Update() => SuperUpdate();
+    protected override void Update() => base.Update();
 
     protected override void DoAction(int selectedOption)
     {
         switch (selectedOption)
         {
-            case 0 : 
-                
-                SceneManager.LoadScene("GameScene");
-                
+            case 0 : SceneManager.LoadScene("GameScene");
                 break;
 
-            case 1 :
-
-                SceneManager.LoadScene("CreditsScene");
-
+            case 1 : SceneManager.LoadScene("CreditsScene");
                 break;
 
-            case 2 :
-
-                Globals.EraseData();
-                Globals.LoadData();
-                maxGoldCoinsTMP.text = Globals.MaxGoldCoinCount.ToString();
-
+            case 2 : SceneManager.LoadScene("PreferencesScene");
                 break;
 
             case 3 :
-
                 Application.Quit();
-
                 break;
         }
     }

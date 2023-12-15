@@ -8,14 +8,14 @@ public class PauseController : ButtonsMenu
     [SerializeField] private GameObject howToPlayParent;
     private bool howToPlayShowing = false;
 
-    void Start()
+    protected override void Start()
     {
-        SuperStart();    
+        base.Start();    
     }
 
-    void Update()
+    protected override void Update()
     {
-        SuperUpdate();
+        base.Update();
 
         if (Input.GetKeyDown(KeyCode.H))
         {

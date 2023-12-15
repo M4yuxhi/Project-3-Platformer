@@ -27,6 +27,9 @@ public class PlayerScript : MonoBehaviour
     [SerializeField] private ViewCameraScript viewCamera;
     [SerializeField] private float rotationAngleVC;
 
+    [Header("SoundController")]
+    [SerializeField] private SoundController collectablesSC;
+
     private int hp = 3;
     private bool DamageCooldown;
     private const float DamageCooldownTime = 5;
@@ -266,13 +269,16 @@ public class PlayerScript : MonoBehaviour
         {
             Destroy(otherGO);
 
+            collectablesSC.PlayAudioClip("goldCoin", false, 0.6f, 1);
             goldCoinCount = LevelControllerScript.goldCoinsToCollect - LevelControllerScript.currentGoldCoins + 1;
             playerUI.UpdateGoldCoinCounter(goldCoinCount);
         }
         if (otherGO.CompareTag("GreenCoin")) 
         {
             Destroy(otherGO);
+
             greenCoinCount = LevelControllerScript.greenCoinsToCollect - LevelControllerScript.currentGreenCoins + 1;
+            collectablesSC.PlayAudioClip("greenCoin" + greenCoinCount, false, 0.6f, 2);
             playerUI.UpdateGreenCoinCounter(greenCoinCount);
         }
     }

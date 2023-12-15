@@ -4,19 +4,23 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
-public class Globals
+public static class Globals
 {
     private static int goldCoinsCollected;
+    private static readonly int maxSavesSlotNumber = 3;
     private static int maxGoldCoinCount;
     private static bool pause;
+    private static int selectedSaveSlot = 1;
 
-    public static int MaxGoldCoinCount { get => maxGoldCoinCount; set => maxGoldCoinCount = value; }
     public static int GoldCoinsCollected { get => goldCoinsCollected; set => goldCoinsCollected = value; }
+    public static int MaxSavesSlotNumber { get => maxSavesSlotNumber; }
+    public static int MaxGoldCoinCount { get => maxGoldCoinCount; set => maxGoldCoinCount = value; }
     public static bool Pause { get => pause; }
+    public static int SelectedSavesSlot { get => selectedSaveSlot; set => selectedSaveSlot = value; }
 
     private static void AdjustTimeScale()
     {
-        if (Globals.pause)
+        if (pause)
         {
             Time.timeScale = 0;
         }
@@ -50,7 +54,7 @@ public class Globals
         }
     }
 
-    public static void SaveData()
+    public static void SaveData(int slot)
     {
         CheckDirectory("/Saves");
 
@@ -58,14 +62,14 @@ public class Globals
         data.maxGoldCoinCount = maxGoldCoinCount;
 
         string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(Application.dataPath + "/Saves/gameSave.json", json);
+        File.WriteAllText(Application.dataPath + "/Saves/gameSave" + slot + ".json", json);
     }
 
-    public static void LoadData()
+    public static void LoadData(int slot)
     {
         CheckDirectory("/Saves");
 
-        string filePath = Application.dataPath + "/Saves/gameSave.json";
+        string filePath = Application.dataPath + "/Saves/gameSave" + slot + ".json";
 
         try 
         {
@@ -75,15 +79,17 @@ public class Globals
                 GameData data = JsonUtility.FromJson<GameData>(json);
                 maxGoldCoinCount = data.maxGoldCoinCount;
             }
-            else SaveData();
+            else SaveData(slot);
         }
         catch (Exception e)
         {
             Debug.LogError("Error al cargar el archivo JSON: " + e.Message);
         }
+
+        SelectedSavesSlot = slot;
     }
 
-    public static void EraseData()
+    public static void EraseData(int slot)
     {
         CheckDirectory("/Saves");
 
@@ -91,6 +97,8 @@ public class Globals
         data.maxGoldCoinCount = 0;
 
         string json = JsonUtility.ToJson(data, true);
-        File.WriteAllText(Application.dataPath + "/Saves/gameSave.json", json);
+        File.WriteAllText(Application.dataPath + "/Saves/gameSave" + slot + ".json", json);
+
+        if (slot == SelectedSavesSlot) LoadData(slot);
     }
 }

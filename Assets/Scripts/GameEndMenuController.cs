@@ -9,18 +9,16 @@ public class GameEndMenuController : ButtonsMenu
     [SerializeField] private TMP_Text goldCoinsRecord;
     [SerializeField] private TMP_Text goldCoinsCollected;
 
-    void Start()
+    protected override void Start()
     {
-        SuperStart();
+        base.Start();
 
         goldCoinsRecord.text = Globals.MaxGoldCoinCount.ToString();
         goldCoinsCollected.text = Globals.GoldCoinsCollected.ToString();
     }
 
-    void Update()
-    {
-        SuperUpdate();
-    }
+    protected override void Update() => base.Update();
+    
 
     protected override void DoAction(int selectedOption)
     {
