@@ -34,7 +34,7 @@ public class LevelControllerScript : MonoBehaviour
                 Globals.MaxGoldCoinCount = Globals.GoldCoinsCollected;
             }
             
-            Globals.SaveData(Globals.SelectedSavesSlot);
+            Globals.Saves.SaveData(Globals.Saves.SelectedSavesSlot);
             SceneManager.LoadScene("GameEndScene");
         }
         if (playerPos.y < -8) 

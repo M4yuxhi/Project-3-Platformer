@@ -13,7 +13,7 @@ public class PreferencesController : Menu
 
     protected override void Start() 
     {
-        selectedSaveSlotText.text = Globals.SelectedSavesSlot.ToString();
+        selectedSaveSlotText.text = Globals.Saves.SelectedSavesSlot.ToString();
     }
 
     protected override void Update() 
@@ -31,10 +31,10 @@ public class PreferencesController : Menu
         switch (selectedOption)
         {
             case 0 :
-                Globals.LoadData(selectedSlot);
+                Globals.Saves.LoadData(selectedSlot);
                 break;
             case 1 :
-                Globals.EraseData(selectedSlot);
+                Globals.Saves.EraseData(selectedSlot);
                 break;
         }
     }
@@ -51,12 +51,12 @@ public class PreferencesController : Menu
         if (left || left2)
         {
             if (selectedSlot > 1) selectedSlot--;
-            else selectedSlot = Globals.MaxSavesSlotNumber;
+            else selectedSlot = Globals.Saves.MaxSavesSlotNumber;
             selectedSaveSlotText.text = selectedSlot.ToString();
         }
         if (right || right2)
         {
-            if (selectedSlot < Globals.MaxSavesSlotNumber) selectedSlot++;
+            if (selectedSlot < Globals.Saves.MaxSavesSlotNumber) selectedSlot++;
             else selectedSlot = 1;
             selectedSaveSlotText.text = selectedSlot.ToString();
         }
@@ -71,7 +71,6 @@ public class PreferencesController : Menu
             selectors[i].SetActive(false);
         }
 
-        print(selectedOption);
         selectors[selectedOption].SetActive(true);
     }
 }
