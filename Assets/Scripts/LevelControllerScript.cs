@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelControllerScript : MonoBehaviour
 {
+    [Header("Y position limit")]
     [SerializeField] private Transform playerTrans;
+    [Header("Scenes")]
+    [SerializeField] private string nextSceneName;
 
     [HideInInspector] public static int goldCoinsToCollect;
     [HideInInspector] public static int greenCoinsToCollect;
@@ -35,7 +38,7 @@ public class LevelControllerScript : MonoBehaviour
             }
             
             Globals.Saves.SaveData(Globals.Saves.SelectedSavesSlot);
-            SceneManager.LoadScene("GameEndScene");
+            SceneManager.LoadScene(nextSceneName);
         }
         if (playerPos.y < -8) 
         {

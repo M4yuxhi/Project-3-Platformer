@@ -35,7 +35,8 @@ public class PauseController : ButtonsMenu
         {
             case 1 :
 
-                SceneManager.LoadScene("GameScene");
+                string currentSceneName = SceneManager.GetActiveScene().name;
+                SceneManager.LoadScene(currentSceneName);
 
                 break;
 
