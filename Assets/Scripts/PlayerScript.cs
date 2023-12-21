@@ -29,6 +29,8 @@ public class PlayerScript : MonoBehaviour
 
     [Header("SoundController")]
     [SerializeField] private SoundController collectablesSC;
+    public SoundController actionsSC;
+    public SoundController musicSC;
 
     private int hp = 3;
     private bool DamageCooldown;
@@ -55,6 +57,7 @@ public class PlayerScript : MonoBehaviour
 
         meshRenderer = GetComponent<MeshRenderer>();
         initialColor = meshRenderer.material.color;
+        musicSC.PlayAudioClip("normalMusic", true, 0.2f * Globals.Sound.VolMusic, 1);
     }
 
     // Update is called once per frame
@@ -102,6 +105,9 @@ public class PlayerScript : MonoBehaviour
 
         if (pause)
         {
+            if (Globals.Pause) actionsSC.PlayAudioClip("pause", false, 1f, 3);
+            else actionsSC.PlayAudioClip("unpause", false, 1f, 3);
+
             Globals.ChangeConditionPause();
             playerUI.pauseController.gameObject.SetActive(Globals.Pause);
 
@@ -192,6 +198,7 @@ public class PlayerScript : MonoBehaviour
 
                 rb.velocity = currentVelocity;
                 coyoteTimeCounter = 0;
+                actionsSC.PlayAudioClip("jump", false, 0.1f, 1);
             }
         }
         else
@@ -209,6 +216,7 @@ public class PlayerScript : MonoBehaviour
                 Vector3 currentVelocity = rb.velocity;
                 currentVelocity.y = jumpForce;
                 rb.velocity = currentVelocity;
+                actionsSC.PlayAudioClip("jump", false, 0.1f, 1);
             }
         }
         else
@@ -254,6 +262,7 @@ public class PlayerScript : MonoBehaviour
                 {
                     hp--;
                     DamageCooldown = true;
+                    actionsSC.PlayAudioClip("falling", false, 0.2f * Globals.Sound.VolFX, 2);
                     playerUI.UpdateHPCounter(hp);
                     break;
                 }

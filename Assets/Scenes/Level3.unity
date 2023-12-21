@@ -2786,6 +2786,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5489090585539047440, guid: 1d0ebeeaf8f29dc43a7948344998b3e1, type: 3}
   m_PrefabInstance: {fileID: 902718733}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &107703350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7781481867866771710, guid: c50b6b7267c33884d808444a112ea391, type: 3}
+  m_PrefabInstance: {fileID: 959311983}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &109403130 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5489090585539047440, guid: 1d0ebeeaf8f29dc43a7948344998b3e1, type: 3}
@@ -6525,6 +6530,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5489090585539047440, guid: 1d0ebeeaf8f29dc43a7948344998b3e1, type: 3}
   m_PrefabInstance: {fileID: 2123146888}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &309798605 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 565323479936519467, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
+  m_PrefabInstance: {fileID: 314723062}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &311580274 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5489090585539047440, guid: 1d0ebeeaf8f29dc43a7948344998b3e1, type: 3}
@@ -6680,6 +6690,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlimePBR (3) Variant (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 3438507916300290753, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
+      propertyPath: ani
+      value: 
+      objectReference: {fileID: 309798605}
+    - target: {fileID: 3438507916300290753, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 107703350}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -43908,6 +43926,10 @@ PrefabInstance:
       propertyPath: playerTrans
       value: 
       objectReference: {fileID: 2068633372}
+    - target: {fileID: 7494559448298906410, guid: ba5e3cd8175b5204bbd106a8e57da780, type: 3}
+      propertyPath: nextSceneName
+      value: Level4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

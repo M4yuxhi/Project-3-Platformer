@@ -30,9 +30,6 @@ public class PreferencesController : Menu
     {
         switch (selectedOption)
         {
-            case 0 :
-                Globals.Saves.LoadData(selectedSlot);
-                break;
             case 1 :
                 Globals.Saves.EraseData(selectedSlot);
                 break;
@@ -43,22 +40,27 @@ public class PreferencesController : Menu
     {
         base.Navegate(min, max);
 
-        bool left = Input.GetKeyDown(KeyCode.A);
-        bool left2 = Input.GetKeyDown(KeyCode.LeftArrow);
-        bool right = Input.GetKeyDown(KeyCode.D);
-        bool right2 = Input.GetKeyDown(KeyCode.RightArrow);
+        if (selectedOption == 0)
+        {
+            bool left = Input.GetKeyDown(KeyCode.A);
+            bool left2 = Input.GetKeyDown(KeyCode.LeftArrow);
+            bool right = Input.GetKeyDown(KeyCode.D);
+            bool right2 = Input.GetKeyDown(KeyCode.RightArrow);
 
-        if (left || left2)
-        {
-            if (selectedSlot > 1) selectedSlot--;
-            else selectedSlot = Globals.Saves.MaxSavesSlotNumber;
-            selectedSaveSlotText.text = selectedSlot.ToString();
-        }
-        if (right || right2)
-        {
-            if (selectedSlot < Globals.Saves.MaxSavesSlotNumber) selectedSlot++;
-            else selectedSlot = 1;
-            selectedSaveSlotText.text = selectedSlot.ToString();
+            if (left || left2)
+            {
+                if (selectedSlot > 1) selectedSlot--;
+                else selectedSlot = Globals.Saves.MaxSavesSlotNumber;
+                selectedSaveSlotText.text = selectedSlot.ToString();
+                Globals.Saves.LoadData(selectedSlot);
+            }
+            if (right || right2)
+            {
+                if (selectedSlot < Globals.Saves.MaxSavesSlotNumber) selectedSlot++;
+                else selectedSlot = 1;
+                selectedSaveSlotText.text = selectedSlot.ToString();
+                Globals.Saves.LoadData(selectedSlot);
+            }
         }
 
         UpdateUI();

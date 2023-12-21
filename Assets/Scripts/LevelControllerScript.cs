@@ -45,6 +45,7 @@ public class LevelControllerScript : MonoBehaviour
 
     void Update()
     {
+        bool level4 = SceneManager.GetActiveScene().name == "Level4";
         currentGoldCoins = GameObject.FindGameObjectsWithTag("GoldCoin").Length;
         currentGreenCoins = GameObject.FindGameObjectsWithTag("GreenCoin").Length;
         Vector3 playerPos = playerTrans.position; //Yup, trans joke. TRANS RIGHTS!!!
@@ -58,7 +59,7 @@ public class LevelControllerScript : MonoBehaviour
                 Globals.MaxGoldCoinCount = Globals.GoldCoinsCollected;
             }
 
-            Globals.Saves.LastLevelIndex = SceneManager.GetActiveScene().buildIndex;
+            if (!level4) Globals.Saves.LastLevelIndex = SceneManager.GetActiveScene().buildIndex;
             Globals.Saves.SaveData(Globals.Saves.SelectedSavesSlot);
             SceneManager.LoadScene(nextSceneName);
         }
@@ -68,7 +69,7 @@ public class LevelControllerScript : MonoBehaviour
             SceneManager.LoadScene(currentSceneName);
         }
 
-        if (SceneManager.GetActiveScene().name == "Level4") Minigame();
+        if (level4) Minigame();
     }
 
     private void Minigame()
@@ -82,6 +83,8 @@ public class LevelControllerScript : MonoBehaviour
             { 
                 playerTrans.position = posMinigame;
                 cameraParent.transform.position = posMinigame + new Vector3(dx, dy, dz);
+                playerTrans.GetComponent<PlayerScript>().actionsSC.PlayAudioClip("minigameTP", false, 0.6f * Globals.Sound.VolFX, 1);
+                playerTrans.GetComponent<PlayerScript>().musicSC.PlayAudioClip("minigameMusic", false, 0.8f * Globals.Sound.VolMusic, 1);
             }
             playerPosSetted = true;
         }
@@ -94,6 +97,7 @@ public class LevelControllerScript : MonoBehaviour
                 isMinigameActive = false;
                 playerTrans.position = posPostMinigame;
                 cameraParent.transform.position = posPostMinigame + new Vector3(dx, dy, dz);
+                playerTrans.GetComponent<PlayerScript>().musicSC.PlayAudioClip("normalMusic", true, 0.2f * Globals.Sound.VolMusic, 1);
             }
         }
     }

@@ -6,18 +6,18 @@ public class EnemyScript : MonoBehaviour
 {
     public int rutina;
     public float cronometro;
-    public Animator ani;
+    private Animator ani;
     public Quaternion angulo;
     public float grado;
 
-    public GameObject target;
+    private GameObject target;
     public bool atacando;
 
     // Start is called before the first frame update
     void Start()
     {
         ani = GetComponent<Animator>();
-        target = GameObject.Find("Player");
+        target = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame

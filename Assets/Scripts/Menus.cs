@@ -76,6 +76,8 @@ public abstract class ButtonsMenu : Menu
         UpdateButtons();
     }
 
+    public virtual void SetOption(int option, int type) { }
+
     protected void UpdateButtons()
     {
         for (int i = 0; i < buttons.Length; i++)
