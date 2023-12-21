@@ -20,6 +20,31 @@ public class PlayerUIScript : MonoBehaviour
     [Header("Pause Elements")]
     public PauseController pauseController;
 
+    [Header("MinigameTimer")]
+    [SerializeField] private TMP_Text minigameTimer;
+    private LevelControllerScript levelController;
+
+    private string currentSceneName;
+
+    void Start()
+    {
+        currentSceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+
+        if (currentSceneName == "Level4")
+        {
+            levelController = GameObject.FindGameObjectWithTag("LevelController").GetComponent<LevelControllerScript>();
+        }    
+    }
+
+    void Update()
+    {
+        if (currentSceneName != "Level4") return;
+        
+        minigameTimer.gameObject.SetActive(LevelControllerScript.isMinigameActive);
+        minigameTimer.text = Mathf.RoundToInt(levelController.MinigameTimer).ToString();
+        
+    }
+
     public void UpdateGoldCoinCounter(int value)
     {
         goldCoinText.text = value + " / " + LevelControllerScript.goldCoinsToCollect;

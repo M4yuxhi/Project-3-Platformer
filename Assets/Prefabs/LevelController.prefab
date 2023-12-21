@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7494559448298906410}
   m_Layer: 0
   m_Name: LevelController
-  m_TagString: Untagged
+  m_TagString: LevelController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7494559448298906410
 MonoBehaviour:
@@ -45,3 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTrans: {fileID: 0}
+  nextSceneName: GameEndScene
+  posMinigame: {x: -10.10226, y: 1.69, z: 986.3}
+  posPostMinigame: {x: -3.426061, y: 4.92, z: 298.5738}
+  dx: 0.401919
+  dy: 1.01
+  dz: 12.4829

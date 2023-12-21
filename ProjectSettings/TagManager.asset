@@ -7,6 +7,10 @@ TagManager:
   - Enemigo
   - GoldCoin
   - GreenCoin
+  - Ground
+  - MinigameBarrel
+  - CameraParent
+  - LevelController
   layers:
   - Default
   - TransparentFX

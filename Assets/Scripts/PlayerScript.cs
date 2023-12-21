@@ -123,19 +123,19 @@ public class PlayerScript : MonoBehaviour
             asignedSpeed = speed;
         }
 
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             movement += cameraTransform.forward;
         }
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             movement -= cameraTransform.forward;
         }
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
             movement -= cameraTransform.right;
         }
-        if (Input.GetKey(KeyCode.D))
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
             movement += cameraTransform.right;
         }
@@ -280,6 +280,10 @@ public class PlayerScript : MonoBehaviour
             greenCoinCount = LevelControllerScript.greenCoinsToCollect - LevelControllerScript.currentGreenCoins + 1;
             collectablesSC.PlayAudioClip("greenCoin" + greenCoinCount, false, 0.6f, 2);
             playerUI.UpdateGreenCoinCounter(greenCoinCount);
+        }
+        if (otherGO.CompareTag("MinigameBarrel"))
+        {
+            Destroy(otherGO);
         }
     }
 }
