@@ -57,7 +57,8 @@ public class LevelControllerScript : MonoBehaviour
             {
                 Globals.MaxGoldCoinCount = Globals.GoldCoinsCollected;
             }
-            
+
+            Globals.Saves.LastLevelIndex = SceneManager.GetActiveScene().buildIndex;
             Globals.Saves.SaveData(Globals.Saves.SelectedSavesSlot);
             SceneManager.LoadScene(nextSceneName);
         }

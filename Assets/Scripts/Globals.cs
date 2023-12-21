@@ -19,11 +19,13 @@ public static class Globals
 
     public static class Saves
     {
+        private static int lastLevelIndex;
         private static readonly int maxSavesSlotNumber = 3;
         private static int selectedSaveSlot = 1;
 
         public static int MaxSavesSlotNumber { get => maxSavesSlotNumber; }
         public static int SelectedSavesSlot { get => selectedSaveSlot; set => selectedSaveSlot = value; }
+        public static int LastLevelIndex { get => lastLevelIndex; set => lastLevelIndex = value; }
 
         private static void CheckDirectory(string directoryName)
         {
@@ -41,8 +43,7 @@ public static class Globals
         {
             CheckDirectory("/Saves");
 
-            GameData data = new GameData();
-            data.maxGoldCoinCount = maxGoldCoinCount;
+            GameData data = new GameData(maxGoldCoinCount, lastLevelIndex);
 
             string json = JsonUtility.ToJson(data, true);
             File.WriteAllText(Application.dataPath + "/Saves/gameSave" + slot + ".json", json);
@@ -76,8 +77,7 @@ public static class Globals
         {
             CheckDirectory("/Saves");
 
-            GameData data = new GameData();
-            data.maxGoldCoinCount = 0;
+            GameData data = new GameData(0, 2);
 
             string json = JsonUtility.ToJson(data, true);
             File.WriteAllText(Application.dataPath + "/Saves/gameSave" + slot + ".json", json);

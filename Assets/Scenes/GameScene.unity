@@ -8503,8 +8503,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &2108783615 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
-  m_PrefabInstance: {fileID: 7199589195681984032}
+  m_CorrespondingSourceObject: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
+  m_PrefabInstance: {fileID: 5924569702018464437}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2116227116
 PrefabInstance:
@@ -9069,7 +9069,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47f9523bedf718c4fb769b1026a14f88, type: 3}
---- !u!1001 &7199589195681984032
+--- !u!1001 &5924569702018464437
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -9077,55 +9077,55 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 989214973}
     m_Modifications:
-    - target: {fileID: 1931298151966786, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
-      propertyPath: m_Name
-      value: SlimePBR (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4047972025199878, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 469831424059974771, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2968791416714871732, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+    - target: {fileID: 472192047445172535, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
+      propertyPath: m_Name
+      value: SlimePBR (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3438507916300290753, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 891826985}
@@ -9133,7 +9133,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 928a1377c1cd4515b208fef3a396b8ea, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: b4da9662e943a2a47b84cca2a86faca3, type: 3}
 --- !u!1001 &7272504188851052300
 PrefabInstance:
   m_ObjectHideFlags: 0
